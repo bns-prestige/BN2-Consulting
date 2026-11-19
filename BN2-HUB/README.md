@@ -26,6 +26,10 @@ Reprendre l'identité du site BN2 Consulting :
 - L'IA configure le contenu et les modules autorisés ; elle ne génère pas librement le code de sécurité ou l'architecture.
 - Les actions sensibles (notamment onboarding/offboarding) nécessitent une validation humaine.
 
-## État
+## État actuel
 
-Initialisation du dépôt et préparation du cahier des charges. Aucun backend ni aucune fonctionnalité métier n'est encore déployé.
+- Premier template client Next.js créé.
+- Tableau de bord responsive avec navigation, indicateurs, demandes récentes et raccourcis.
+- Prototype de création de demande et thème clair/sombre.
+- Données de démonstration uniquement : aucun formulaire n'envoie encore de demande.
+- Supabase et les contrôles d'accès multi-entreprises restent à intégrer.
