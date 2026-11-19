@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BN2 Consulting</title>
+<meta name="description" content="BN2 Consulting – IT support, Microsoft 365, hardware, storage & security for small businesses in Brussels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3fb;--ink:#0a1630;--muted:#4f5f88;--card:rgba(255,255,255,.72);--line:rgba(30,50,110,.14);--a:#0b84d8;--b:#6a4cff;--btn-ink:#fff;--hbg:rgba(238,243,251,.8);--glow:rgba(11,132,216,.2);--ok:#0a9a5c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#050d1a;--ink:#e8f0ff;--muted:#8fa3c4;--card:rgba(255,255,255,.045);--line:rgba(140,170,255,.16);--a:#4fd8ff;--b:#8b7cff;--btn-ink:#04121c;--hbg:rgba(5,13,26,.72);--glow:rgba(79,216,255,.2);--ok:#6ff0b0}}
+:root[data-theme="dark"]{--bg:#050d1a;--ink:#e8f0ff;--muted:#8fa3c4;--card:rgba(255,255,255,.045);--line:rgba(140,170,255,.16);--a:#4fd8ff;--b:#8b7cff;--btn-ink:#04121c;--hbg:rgba(5,13,26,.72);--glow:rgba(79,216,255,.2);--ok:#6ff0b0}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:80px;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:20;background:var(--hbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+h1,h2,h3{font-family:Sora,Manrope,system-ui,sans-serif;margin:0;letter-spacing:-.03em;line-height:1.05}
+a{color:inherit}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(90px);animation:drift 22s ease-in-out infinite alternate}
+.aurora i:nth-child(1){background:var(--a);top:-25vmax;right:-15vmax;opacity:.28}
+.aurora i:nth-child(2){background:var(--b);bottom:-30vmax;left:-20vmax;opacity:.28;animation-delay:-9s}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+.spot{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,30%),var(--glow),transparent 70%)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--hbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{font:800 1.3rem Sora,sans-serif;text-decoration:none;letter-spacing:-.04em;white-space:nowrap}
+.logo span,.grad{background:linear-gradient(100deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:4px;align-items:center;overflow-x:auto;margin-left:auto}
+nav a{text-decoration:none;color:var(--muted);padding:8px 14px;border-radius:999px;font-size:.95rem;white-space:nowrap;transition:color .2s,background .2s}
+nav a:hover{color:var(--ink)}
+nav a[aria-current="page"]{color:var(--ink);background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.lang{display:flex;gap:2px;padding:3px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);background:var(--card)}
+.lang button{font:600 .82rem Manrope,sans-serif;color:var(--muted);background:none;border:0;border-radius:999px;padding:6px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:linear-gradient(135deg,var(--a),var(--b));color:var(--btn-ink)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--a),var(--b));color:var(--btn-ink);font:600 1rem Manrope,sans-serif;text-decoration:none;padding:15px 26px;border-radius:12px;border:0;cursor:pointer;box-shadow:0 10px 34px -10px var(--a);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px var(--a)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+.view{display:none;position:relative;z-index:1}
+.view.on{display:block}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.hero{padding:104px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.4rem);font-weight:800}
+.lead{font-size:1.2rem;color:var(--muted);max-width:32em;margin:26px 0 34px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden;transition:border-color .25s,transform .15s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--cx,50%) var(--cy,50%),var(--glow),transparent 65%);opacity:0;transition:opacity .25s;pointer-events:none}
+.card:hover{border-color:var(--a)}
+.card:hover::before{opacity:1}
+.term h3{font:500 .92rem Manrope,sans-serif;color:var(--muted);margin-bottom:16px;letter-spacing:0;display:flex;gap:7px;align-items:center}
+.term h3 i{width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block}
+.msg{padding:13px 15px;border-radius:12px;margin-bottom:10px;font-size:.98rem;opacity:0;animation:pop .5s ease forwards}
+.msg small{display:block;font-size:.8rem;opacity:.7;margin-bottom:2px}
+.msg.q{background:var(--card);box-shadow:inset 0 0 0 1px var(--line);animation-delay:.5s}
+.msg.a{background:linear-gradient(135deg,var(--a),var(--b));color:var(--btn-ink);animation-delay:1.5s}
+.state{font-size:.9rem;color:var(--muted);opacity:0;animation:pop .5s 2.4s ease forwards}
+.state b{color:var(--ok)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.marq{overflow:hidden;border-block:1px solid var(--line);background:var(--card);position:relative;z-index:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marq div{display:flex;gap:48px;width:max-content;padding:16px 0;animation:mq 36s linear infinite;font:700 1.15rem Sora,sans-serif;color:var(--muted)}
+.marq span::after{content:"";display:inline-block;width:7px;height:7px;margin-left:48px;border-radius:50%;background:var(--a);vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+.page-head{padding:88px 0 40px}
+.page-head h1{font-size:clamp(2.3rem,5.4vw,4.2rem);font-weight:800;max-width:14em}
+.page-head p,.sub{color:var(--muted);max-width:36em;margin:18px 0 0;font-size:1.15rem}
+section{padding:56px 0 72px}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800;max-width:17em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.grid.g2{grid-template-columns:repeat(2,1fr)}
+.grid .card h3{font-size:1.25rem;margin-bottom:8px}
+.grid .card p{margin:0;color:var(--muted);font-size:1rem}
+a.card{text-decoration:none;display:block}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;gap:16px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:84px 1fr;gap:20px;align-items:center}
+.steps li::before{content:counter(s);font:800 3.2rem/1 Sora,sans-serif;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.steps h3{font-size:1.4rem;margin-bottom:4px}
+.steps p{margin:0;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two p{margin:0 0 16px;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0;list-style:none}
+.pills li{border:1px solid var(--line);background:var(--card);padding:9px 17px;border-radius:999px}
+.mail{font:800 clamp(1.2rem,3vw,1.7rem) Sora,sans-serif;display:inline-block;margin-top:20px;word-break:break-all}
+form{display:grid;gap:14px}
+label{font-weight:500;font-size:.95rem;display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;width:100%}
+input:focus,textarea:focus{border-color:var(--a);outline:none;box-shadow:0 0 0 3px var(--glow)}
+textarea{min-height:140px;resize:vertical}
+.cta{padding:0 0 80px;position:relative;z-index:1}
+.cta[hidden]{display:none}
+.cta .card{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:36px}
+.cta h2{font-size:1.7rem}
+footer{position:relative;z-index:1;padding:28px 0;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){
+.hero .wrap,.two{grid-template-columns:1fr;gap:36px}
+.hero{padding:56px 0 64px}
+.grid,.grid.g2{grid-template-columns:1fr}
+.steps li{grid-template-columns:56px 1fr}
+.steps li::before{font-size:2.2rem}
+header .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+nav{order:3;width:100%;margin-left:0}
+.lang{margin-left:auto}
+.page-head{padding-top:56px}}
+@media (prefers-reduced-motion:reduce){.aurora i,.marq div,.msg,.state{animation:none;opacity:1}.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="spot" aria-hidden="true"></div>
+
+<header>
+<div class="wrap">
+<a class="logo" href="#accueil">BN2<span> Consulting</span></a>
+<nav id="nav">
+<a href="#accueil" data-i="n1"></a><a href="#services" data-i="n2"></a><a href="#ia" data-i="n6"></a><a href="#methode" data-i="n3"></a><a href="#a-propos" data-i="n4"></a><a href="#contact" data-i="n5"></a>
+</nav>
+<div class="lang" role="group" aria-label="Langue"><button data-l="fr">FR</button><button data-l="nl">NL</button><button data-l="en">EN</button></div>
+</div>
+</header>
+
+<main>
+<div class="view" id="accueil">
+<div class="hero"><div class="wrap">
+<div>
+<h1 data-scr data-i="h1"></h1>
+<p class="lead" data-i="lead"></p>
+<div class="row"><a class="btn" href="#contact" data-i="b1"></a><a class="btn ghost" href="#services" data-i="b2"></a></div>
+</div>
+<div class="card term tilt">
+<h3><i></i><i></i><i></i>&nbsp;<span data-i="tH"></span></h3>
+<div class="msg q"><small data-i="tYou"></small><span data-i="tQ"></span></div>
+<div class="msg a"><small>BN2 Consulting</small><span data-i="tA"></span></div>
+<div class="state"><b>●</b> <span data-i="tOk"></span></div>
+</div>
+</div></div>
+<div class="marq" aria-hidden="true"><div id="mq"></div></div>
+<section><div class="wrap"><h2 class="rv" data-i="aiH"></h2><p class="sub rv" data-i="aiP"></p><div class="grid" id="aiHome"></div><div class="row rv" style="margin-top:28px"><a class="btn" href="#ia" data-i="aiB"></a></div></div></section>
+<section><div class="wrap">
+<h2 class="rv" data-i="hs"></h2>
+<div class="grid" id="homeGrid"></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap">
+<h2 class="rv" data-i="cH"></h2>
+<p class="sub rv" data-i="cP"></p>
+<div class="grid g2" id="cGrid"></div>
+</div></section>
+</div>
+
+<div class="view" id="services">
+<div class="page-head"><div class="wrap"><h1 data-scr data-i="sh1"></h1><p data-i="sp"></p></div></div>
+<section><div class="wrap"><div class="grid" id="allGrid" style="margin-top:0"></div></div></section>
+</div>
+
+<div class="view" id="methode">
+<div class="page-head"><div class="wrap"><h1 data-scr data-i="mh1"></h1><p data-i="mp"></p></div></div>
+<section><div class="wrap"><ol class="steps" id="steps"></ol></div></section>
+</div>
+
+<div class="view" id="a-propos">
+<div class="page-head"><div class="wrap"><h1 data-scr data-i="ah1"></h1><p data-i="ap"></p></div></div>
+<section><div class="wrap two">
+<div class="rv"><h2 data-i="abT"></h2></div>
+<div class="rv"><p data-i="ab1"></p><p data-i="ab2"></p><ul class="pills" id="pills"></ul></div>
+</div></section>
+</div>
+
+<div class="view" id="ia"><div class="page-head"><div class="wrap"><h1 data-scr data-i="ia_h1"></h1><p data-i="ia_p"></p></div></div><section><div class="wrap"><div class="grid" id="iaGrid" style="margin-top:0"></div></div></section></div>
+<div class="view" id="contact">
+<div class="page-head"><div class="wrap"><h1 data-scr data-i="kh1"></h1><p data-i="kp"></p></div></div>
+<section><div class="wrap two">
+<div><h2 data-i="mailT"></h2><a class="mail grad" href="mailto:consultingbn2@gmail.com">consultingbn2@gmail.com</a></div>
+<form id="f" class="card">
+<label><span data-i="fNom"></span><input name="nom" required autocomplete="name"></label>
+<label><span data-i="fEnt"></span><input name="ent" autocomplete="organization"></label>
+<label><span data-i="fMsg"></span><textarea name="msg" required></textarea></label>
+<button class="btn" type="submit" data-i="fBtn"></button>
+<p style="margin:0;color:var(--muted);font-size:.9rem" data-i="fNote"></p>
+</form>
+</div></section>
+</div>
+</main>
+
+<div class="cta" id="cta"><div class="wrap rv"><div class="card"><h2 data-i="cta"></h2><a class="btn" href="#contact" data-i="ctaB"></a></div></div></div>
+<footer><div class="wrap"><span data-i="foot"></span><a href="mailto:consultingbn2@gmail.com">consultingbn2@gmail.com</a></div></footer>
+
+<script>
+var D={
+fr:{n1:"Accueil",n2:"Services",n3:"Méthode",n4:"À propos",n5:"Contact",
+h1:"L’IT de votre entreprise, <span class=grad>sans le stress.</span>",
+lead:"BN2 Consulting gère le support, Microsoft 365, le matériel, le stockage, la sécurité et l’IA des petites entreprises. Vous décrivez le problème, on le règle, et on automatise ce qui revient.",
+b1:"Demander un échange gratuit",b2:"Voir les services",tH:"Exemple de demande",tYou:"Vous",tQ:"Je n’arrive plus à ouvrir ma boîte mail depuis ce matin.",tA:"Compte vérifié, mot de passe réinitialisé, accès rétabli sur votre PC et votre téléphone.",tOk:"Résolu",
+hs:"Ce qu’on fait pour vous",cH:"Vous avez déjà quelqu’un pour l’IT ? Très bien.",cP:"On ne le remplace pas, on travaille avec lui. Voici ce qu’on apporte en plus.",
+C:[["Un renfort quand il est absent","Vacances, maladie, grosse charge : vos utilisateurs ont toujours quelqu’un vers qui se tourner."],["Un regard extérieur","On vérifie la sécurité, les sauvegardes et les accès, et on vous dit simplement ce qui peut être amélioré."],["Des compétences en plus","Microsoft 365, cybersécurité, automatisation, IA : ce qu’un seul informaticien ne couvre pas toujours."],["Le matériel et le stockage","On fournit, installe et configure ordinateurs, réseau et stockage, sans que votre IT ait à s’en occuper."]],
+S:[["Support utilisateurs","Dépannage à distance ou sur place, suivi de chaque demande jusqu’à sa résolution."],["Microsoft 365","Comptes, boîtes mail, Teams, OneDrive et SharePoint."],["IA et automatisation","Assistants IA, Copilot et automatisations sur mesure : moins de tâches répétitives, plus de temps."],["Matériel IT","Ordinateurs, écrans, imprimantes et réseau : on fournit, on installe et on configure."],["Stockage et sauvegardes","NAS, cloud et sauvegardes automatiques préparés sur mesure, restauration testée."],["Cybersécurité de base","Mots de passe, double authentification et bons réflexes pour l’équipe."],["Réseau et Wi-Fi","Un réseau stable et sécurisé, du routeur au Wi-Fi."],["Arrivées et départs","Accès et poste prêts pour un nouveau collaborateur, fermés proprement au départ."]],
+sh1:"Tout ce qui touche à votre informatique.",sp:"Un seul interlocuteur, du dépannage du jour au projet qui fait gagner du temps.",
+mh1:"Une demande, un chemin clair.",mp:"Chaque problème suit les mêmes étapes, du premier message à la solution.",
+P:[["Vous demandez","Par mail, avec vos mots. Pas besoin de vocabulaire technique."],["On comprend","On analyse la situation et on pose les bonnes questions."],["On agit","On règle le problème. Si ça revient souvent, on automatise."],["On confirme","Vous savez ce qui a été fait, et on documente pour la prochaine fois."]],
+ah1:"Une IT simple, pour des équipes simples.",ap:"BN2 Consulting est basé à Bruxelles et accompagne les petites entreprises.",
+abT:"Notre façon de travailler",ab1:"On commence petit : un besoin, un problème à régler, puis on construit une relation durable. Chaque solution est documentée pour que vous ne dépendiez de personne.",ab2:"Ce qui revient souvent, on le standardise puis on l’automatise. Vous gagnez du temps et vos équipes aussi.",
+Q:["Indépendants","Commerces","Professions libérales","Petites PME","Associations"],
+kh1:"Dites-nous ce qui ne va pas.",kp:"On vous répond rapidement avec une première piste.",mailT:"Par mail",fNom:"Votre nom",fEnt:"Votre entreprise",fMsg:"Votre message",fBtn:"Envoyer par mail",fNote:"Le bouton ouvre votre application mail avec le message prêt à envoyer.",subj:"Demande via le site BN2 Consulting",
+n6:"IA",aiH:"L’IA, concrètement, pour votre entreprise",aiP:"Pas de jargon : des outils simples qui font gagner du temps à vos équipes au quotidien.",aiB:"Découvrir nos solutions IA",ia_h1:"L’IA au service de votre quotidien.",ia_p:"On choisit les bons outils, on les met en place et on forme vos équipes.",
+A:[["Assistant IA pour vos équipes","Un assistant qui répond aux questions courantes (mot de passe, accès, procédures) avant même qu’on vous sollicite."],["Microsoft Copilot","Mise en place et formation : résumés de réunions, rédaction de mails, analyse de documents, en toute sécurité."],["Automatisation des tâches","Factures, rapports, notifications, tri des mails : ce qui se répète chaque semaine se fait tout seul."],["IA sur vos propres documents","Retrouvez une info dans vos procédures, contrats ou manuels en posant simplement une question."],["Sécurité et confidentialité","On cadre l’usage de l’IA : quelles données, quels outils, quelles règles, pour rester en conformité."],["Formation de l’équipe","Des ateliers pratiques pour que chacun utilise l’IA au travail sans faire d’erreur."]],
+cta:"Parlons de votre IT.",ctaB:"Nous contacter",foot:"© 2026 BN2 Consulting SRL · Rue du Biplan 24, 1130 Bruxelles · TVA BE0785.289.234"},
+nl:{n1:"Home",n2:"Diensten",n3:"Aanpak",n4:"Over ons",n5:"Contact",
+h1:"De IT van uw bedrijf, <span class=grad>zonder stress.</span>",
+lead:"BN2 Consulting beheert support, Microsoft 365, hardware, opslag, beveiliging en AI voor kleine bedrijven. U beschrijft het probleem, wij lossen het op en automatiseren wat terugkomt.",
+b1:"Gratis gesprek aanvragen",b2:"Bekijk de diensten",tH:"Voorbeeld van een aanvraag",tYou:"U",tQ:"Ik kan sinds vanochtend mijn mailbox niet meer openen.",tA:"Account gecontroleerd, wachtwoord gereset en toegang hersteld op uw pc en telefoon.",tOk:"Opgelost",
+hs:"Wat wij voor u doen",cH:"Hebt u al iemand voor de IT? Prima.",cP:"Wij vervangen die persoon niet, we werken samen. Dit brengen wij extra mee.",
+C:[["Versterking bij afwezigheid","Vakantie, ziekte of drukte: uw gebruikers hebben altijd iemand om op terug te vallen."],["Een blik van buitenaf","Wij controleren beveiliging, back-ups en toegangen en zeggen eenvoudig wat beter kan."],["Extra expertise","Microsoft 365, cybersecurity, automatisering, AI: wat één IT’er niet altijd dekt."],["Hardware en opslag","Wij leveren, installeren en configureren computers, netwerk en opslag, zodat uw IT dat niet hoeft te doen."]],
+S:[["Gebruikersondersteuning","Hulp op afstand of ter plaatse, elke vraag opgevolgd tot ze opgelost is."],["Microsoft 365","Accounts, mailboxen, Teams, OneDrive en SharePoint."],["AI en automatisering","AI-assistenten, Copilot en automatiseringen op maat: minder herhaalwerk, meer tijd."],["IT-hardware","Computers, schermen, printers en netwerk: wij leveren, installeren en configureren."],["Opslag en back-ups","NAS, cloud en automatische back-ups op maat, met geteste herstelprocedure."],["Basis cybersecurity","Wachtwoorden, tweestapsverificatie en goede gewoontes voor het team."],["Netwerk en wifi","Een stabiel en veilig netwerk, van router tot wifi."],["Nieuwe en vertrekkende medewerkers","Toegang en pc klaar voor een nieuwe collega, netjes afgesloten bij vertrek."]],
+sh1:"Alles rond uw informatica.",sp:"Eén aanspreekpunt, van dagelijkse hulp tot het project dat tijd bespaart.",
+mh1:"Eén vraag, één duidelijk traject.",mp:"Elk probleem volgt dezelfde stappen, van het eerste bericht tot de oplossing.",
+P:[["U vraagt","Per mail, in uw eigen woorden. Technisch jargon is niet nodig."],["Wij begrijpen","We analyseren de situatie en stellen de juiste vragen."],["Wij handelen","We lossen het probleem op. Komt het vaak terug, dan automatiseren we."],["Wij bevestigen","U weet wat er gedaan is en we documenteren het voor de volgende keer."]],
+ah1:"Eenvoudige IT voor eenvoudige teams.",ap:"BN2 Consulting is gevestigd in Brussel en ondersteunt kleine bedrijven.",
+abT:"Onze manier van werken",ab1:"We beginnen klein: één behoefte, één probleem om op te lossen, en daarna bouwen we een duurzame relatie op. Elke oplossing wordt gedocumenteerd zodat u van niemand afhankelijk bent.",ab2:"Wat vaak terugkomt, standaardiseren en automatiseren we. U wint tijd en uw team ook.",
+Q:["Zelfstandigen","Winkels","Vrije beroepen","Kleine kmo’s","Verenigingen"],
+kh1:"Vertel ons wat er misloopt.",kp:"We antwoorden snel met een eerste piste.",mailT:"Per mail",fNom:"Uw naam",fEnt:"Uw bedrijf",fMsg:"Uw bericht",fBtn:"Verzenden per mail",fNote:"De knop opent uw mailprogramma met het bericht klaar om te verzenden.",subj:"Aanvraag via de website BN2 Consulting",
+n6:"AI",aiH:"AI, concreet voor uw bedrijf",aiP:"Geen jargon: eenvoudige tools die uw team dagelijks tijd besparen.",aiB:"Ontdek onze AI-oplossingen",ia_h1:"AI die uw dagelijkse werk makkelijker maakt.",ia_p:"Wij kiezen de juiste tools, zetten ze op en trainen uw team.",
+A:[["AI-assistent voor uw team","Een assistent die veelgestelde vragen beantwoordt (wachtwoord, toegang, procedures) nog voor iemand ons moet contacteren."],["Microsoft Copilot","Installatie en training: vergaderverslagen, mails schrijven, documenten analyseren, op een veilige manier."],["Taken automatiseren","Facturen, rapporten, meldingen, mails sorteren: wat wekelijks terugkomt, gebeurt vanzelf."],["AI op uw eigen documenten","Info terugvinden in uw procedures, contracten of handleidingen door gewoon een vraag te stellen."],["Veiligheid en privacy","Wij bepalen het kader: welke data, welke tools, welke regels, om in orde te blijven."],["Training voor het team","Praktische workshops zodat iedereen AI op het werk goed gebruikt zonder fouten."]],
+cta:"Laten we over uw IT praten.",ctaB:"Contact opnemen",foot:"© 2026 BN2 Consulting SRL · Rue du Biplan 24, 1130 Brussel · BTW BE0785.289.234"},
+en:{n1:"Home",n2:"Services",n3:"Process",n4:"About",n5:"Contact",
+h1:"Your company’s IT, <span class=grad>without the stress.</span>",
+lead:"BN2 Consulting handles support, Microsoft 365, hardware, storage, security and AI for small businesses. You describe the problem, we fix it, and we automate what keeps coming back.",
+b1:"Book a free call",b2:"See services",tH:"Example request",tYou:"You",tQ:"I can’t open my mailbox since this morning.",tA:"Account checked, password reset, access restored on your PC and phone.",tOk:"Resolved",
+hs:"What we do for you",cH:"Already have someone for IT? Great.",cP:"We don’t replace them, we work alongside them. Here is what we add.",
+C:[["Backup when they’re away","Holidays, sick days, heavy workload: your users always have someone to turn to."],["A fresh pair of eyes","We review security, backups and access, and tell you plainly what could be better."],["Extra expertise","Microsoft 365, cybersecurity, automation, AI: what one IT person can’t always cover."],["Hardware and storage","We supply, install and configure computers, network and storage, so your IT person doesn’t have to."]],
+S:[["User support","Remote or on-site help, every request followed up until it’s solved."],["Microsoft 365","Accounts, mailboxes, Teams, OneDrive and SharePoint."],["AI and automation","AI assistants, Copilot and custom automations: less repetitive work, more time."],["IT hardware","Computers, screens, printers and network: we supply, install and configure."],["Storage and backups","NAS, cloud and automatic backups built to fit, with tested restores."],["Basic cybersecurity","Passwords, two-factor authentication and good habits for your team."],["Network and Wi-Fi","A stable, secure network, from the router to the Wi-Fi."],["Joiners and leavers","Access and equipment ready for a new hire, cleanly closed when someone leaves."]],
+sh1:"Everything around your IT.",sp:"One contact, from everyday help to the project that saves you time.",
+mh1:"One request, one clear path.",mp:"Every problem follows the same steps, from the first message to the fix.",
+P:[["You ask","By email, in your own words. No technical jargon needed."],["We understand","We look at the situation and ask the right questions."],["We act","We fix the problem. If it keeps coming back, we automate it."],["We confirm","You know what was done, and we document it for next time."]],
+ah1:"Simple IT for simple teams.",ap:"BN2 Consulting is based in Brussels and supports small businesses.",
+abT:"How we work",ab1:"We start small: one need, one problem to solve, then we build a lasting relationship. Every solution is documented so you don’t depend on anyone.",ab2:"What comes back often, we standardise and then automate. You save time and so does your team.",
+Q:["Freelancers","Shops","Professional practices","Small businesses","Non-profits"],
+kh1:"Tell us what’s wrong.",kp:"We reply quickly with a first lead.",mailT:"By email",fNom:"Your name",fEnt:"Your company",fMsg:"Your message",fBtn:"Send by email",fNote:"The button opens your email app with the message ready to send.",subj:"Request via the BN2 Consulting website",
+n6:"AI",aiH:"AI, made practical for your business",aiP:"No jargon: simple tools that save your team time every day.",aiB:"Discover our AI solutions",ia_h1:"AI that makes your daily work easier.",ia_p:"We pick the right tools, set them up and train your team.",
+A:[["AI assistant for your team","An assistant that answers common questions (passwords, access, procedures) before anyone has to contact us."],["Microsoft Copilot","Setup and training: meeting summaries, email drafting, document analysis, done securely."],["Task automation","Invoices, reports, notifications, email sorting: what repeats every week runs by itself."],["AI on your own documents","Find answers in your procedures, contracts or manuals by simply asking a question."],["Security and privacy","We set the framework: which data, which tools, which rules, to stay compliant."],["Team training","Hands-on workshops so everyone uses AI at work properly and avoids mistakes."]],
+cta:"Let’s talk about your IT.",ctaB:"Get in touch",foot:"© 2026 BN2 Consulting SRL · Rue du Biplan 24, 1130 Brussels · VAT BE0785.289.234"}
+};
+var L='fr',views=['accueil','services','methode','a-propos','contact','ia'],$=function(i){return document.getElementById(i)};
+try{var sv=localStorage.getItem('bn2lang');if(D[sv])L=sv;else if(/^nl/i.test(navigator.language))L='nl';else if(/^en/i.test(navigator.language))L='en'}catch(e){}
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function cards(el,list,tag,href){el.innerHTML=list.map(function(s){return '<'+tag+(tag==='a'?' href="'+(href||'#services')+'"':'')+' class="card tilt rv"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></'+tag+'>'}).join('')}
+function scramble(el){
+if(RM)return;
+if(!el.dataset.t)el.dataset.t=el.innerHTML;
+var html=el.dataset.t,tmp=document.createElement('div');tmp.innerHTML=html;
+var plain=tmp.textContent,n=0,ch='abcdefghijklmnopqrstuvwxyz0123456789#%&';
+clearInterval(el._i);
+el._i=setInterval(function(){
+n+=2.2;
+if(n>=plain.length){el.innerHTML=html;clearInterval(el._i);return}
+var out='';for(var k=0;k<plain.length;k++){var c=plain[k];out+=k<n||c===' '?c:ch[Math.floor(Math.random()*ch.length)]}
+el.textContent=out;
+},28);
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+function obs(){document.querySelectorAll('.rv:not(.in)').forEach(function(e,i){e.style.transitionDelay=(i%3)*90+'ms';io.observe(e)})}
+function apply(){
+var T=D[L];document.documentElement.lang=L;
+document.querySelectorAll('[data-i]').forEach(function(e){e.innerHTML=T[e.dataset.i];delete e.dataset.t});
+cards($('homeGrid'),T.S.slice(0,6),'a');cards($('allGrid'),T.S,'div');cards($('cGrid'),T.C,'div');cards($('aiHome'),T.A.slice(0,3),'a','#ia');cards($('iaGrid'),T.A,'div');
+$('steps').innerHTML=T.P.map(function(s){return '<li class="rv"><div class="card"><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div></li>'}).join('');
+$('pills').innerHTML=T.Q.map(function(q){return '<li>'+q+'</li>'}).join('');
+var m=T.S.map(function(s){return '<span>'+s[0]+'</span>'}).join('');$('mq').innerHTML=m+m;
+document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===L)});
+obs();show(true);
+}
+function show(keep){
+var h=location.hash.slice(1);if(views.indexOf(h)<0)h='accueil';
+views.forEach(function(v){$(v).classList.toggle('on',v===h)});
+document.querySelectorAll('#nav a').forEach(function(a){if(a.getAttribute('href')==='#'+h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+document.title='BN2 Consulting'+(h==='accueil'?'':' – '+D[L]['n'+(views.indexOf(h)+1)]);
+$('cta').hidden=h==='contact';
+if(keep!==true)window.scrollTo(0,0);
+var t=$(h).querySelector('[data-scr]');if(t)scramble(t);
+}
+addEventListener('hashchange',function(){show()});
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){L=b.dataset.l;try{localStorage.setItem('bn2lang',L)}catch(e){}apply()})});
+apply();
+
+var fine=matchMedia('(pointer:fine)').matches;
+document.addEventListener('pointermove',function(e){
+var r=document.documentElement.style;r.setProperty('--mx',e.clientX+'px');r.setProperty('--my',e.clientY+'px');
+var c=e.target.closest&&e.target.closest('.card');
+if(c){var b=c.getBoundingClientRect();c.style.setProperty('--cx',e.clientX-b.left+'px');c.style.setProperty('--cy',e.clientY-b.top+'px');
+if(fine&&!RM&&c.classList.contains('tilt')){var x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;c.style.transition='transform .08s';c.style.transform='perspective(800px) rotateX('+(-y*7)+'deg) rotateY('+(x*9)+'deg) translateY(-3px)'}}
+});
+document.addEventListener('pointerout',function(e){var c=e.target.closest&&e.target.closest('.tilt');if(c){c.style.transition='transform .4s';c.style.transform=''}});
+
+var cv=$('net'),cx=cv.getContext('2d'),P=[],W,H,mx=-999,my=-999;
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;var n=Math.min(70,Math.floor(W*H/22000));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+size();addEventListener('resize',size);
+addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY});
+function draw(){
+var col=getComputedStyle(document.documentElement).getPropertyValue('--a').trim()||'#4fd8ff';
+cx.clearRect(0,0,W,H);cx.fillStyle=col;cx.strokeStyle=col;
+for(var i=0;i<P.length;i++){var p=P[i];
+if(!RM){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+cx.globalAlpha=.55;cx.beginPath();cx.arc(p.x,p.y,1.6,0,6.3);cx.fill();
+for(var j=i+1;j<P.length;j++){var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.globalAlpha=(1-d/130)*.25;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+var dm=Math.hypot(p.x-mx,p.y-my);if(dm<170){cx.globalAlpha=(1-dm/170)*.5;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mx,my);cx.stroke()}
+}
+if(!RM)requestAnimationFrame(draw)
+}
+draw();
+
+$('f').addEventListener('submit',function(e){
+e.preventDefault();var d=new FormData(e.target),T=D[L];
+var body=T.fNom+' : '+d.get('nom')+'\n'+T.fEnt+' : '+(d.get('ent')||'-')+'\n\n'+d.get('msg');
+location.href='mailto:consultingbn2@gmail.com?subject='+encodeURIComponent(T.subj)+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
