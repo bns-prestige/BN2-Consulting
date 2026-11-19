@@ -1,14 +1,22 @@
-# BN2 Consulting – site web
+# BN2 Consulting
 
-Site vitrine en un seul fichier (`index.html`), en FR / NL / EN. Aucune installation nécessaire.
+Dépôt principal de BN2 Consulting SRL.
 
-## Mettre en ligne sur GitHub Pages
-1. Crée un dépôt sur GitHub et envoie ces fichiers à la racine.
-2. Dans le dépôt : Settings → Pages.
-3. Source : "Deploy from a branch", branche `main`, dossier `/ (root)`.
-4. Le site est en ligne après quelques minutes.
+## Projets
 
-## Modifier le site
-- Les textes sont dans l'objet `D` au début du script (`fr`, `nl`, `en`).
-- Les couleurs sont dans les variables CSS en haut du fichier (`--a`, `--b`).
-- Le mail de contact est `consultingbn2@gmail.com` (cherche-le dans `index.html`).
+- [SITEWEB](./SITEWEB/) — site vitrine commercial BN2 Consulting (FR / NL / EN).
+- [BN2-HUB](./BN2-HUB/) — future plateforme de gestion informatique multi-entreprises.
+
+## Identité visuelle partagée
+
+Les projets reprennent l'identité du site BN2 Consulting :
+- Titres : Sora.
+- Textes et interfaces : Manrope.
+- Palette claire/sombre avec accents bleu et violet.
+- Cartes arrondies, bordures discrètes et interface responsive.
+
+## Organisation
+
+Chaque projet possède son propre dossier et sa documentation.
+
+Le fichier `index.html` à la racine est conservé pour le moment afin de ne pas interrompre la publication actuelle du site. Le site est également copié dans `SITEWEB/index.html`. La bascule de GitHub Pages vers le dossier `SITEWEB` sera faite séparément après vérification de la configuration d'hébergement.
